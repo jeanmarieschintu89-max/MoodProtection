@@ -20,6 +20,7 @@ settings:
   notify-admins: false
   remove-empty-villagers: false
   block-all-emerald-results: true
+  block-wandering-trader-trades: true
 
 blocked-result-items:
   - EMERALD_BLOCK
