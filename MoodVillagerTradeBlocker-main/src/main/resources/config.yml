@@ -1,0 +1,111 @@
+# MoodVillagerTradeBlocker
+# Objectif: empêcher les échanges villageois qui cassent l'économie.
+
+settings:
+  notify-admins: false
+  remove-empty-villagers: false
+
+  # Recommandé: true.
+  # Bloque tous les trades où le villageois DONNE des émeraudes.
+  # Les trades où le villageois DEMANDE des émeraudes restent autorisés,
+  # sauf si le résultat est dans blocked-result-items.
+  block-all-emerald-results: true
+
+# Supprime les trades dont le résultat donne ces items.
+# Ici on bloque surtout les ressources liées à la bourse et les équipements trop forts.
+blocked-result-items:
+  - EMERALD_BLOCK
+  - DIAMOND
+  - DIAMOND_BLOCK
+  - DIAMOND_SWORD
+  - DIAMOND_PICKAXE
+  - DIAMOND_AXE
+  - DIAMOND_SHOVEL
+  - DIAMOND_HOE
+  - DIAMOND_HELMET
+  - DIAMOND_CHESTPLATE
+  - DIAMOND_LEGGINGS
+  - DIAMOND_BOOTS
+  - IRON_INGOT
+  - IRON_BLOCK
+  - GOLD_INGOT
+  - GOLD_BLOCK
+  - COPPER_INGOT
+  - COPPER_BLOCK
+  - REDSTONE
+  - REDSTONE_BLOCK
+  - LAPIS_LAZULI
+  - LAPIS_BLOCK
+  - QUARTZ
+  - COAL
+  - COAL_BLOCK
+  - AMETHYST_SHARD
+  - NETHERITE_INGOT
+  - NETHERITE_SCRAP
+  - NETHERITE_UPGRADE_SMITHING_TEMPLATE
+
+# Si block-all-emerald-results est false, cette liste bloque seulement
+# les trades où ces ingrédients donnent une émeraude.
+# Elle reste utile pour une politique moins stricte.
+blocked-emerald-ingredient-items:
+  - STICK
+  - PAPER
+  - ROTTEN_FLESH
+  - WHEAT
+  - WHEAT_SEEDS
+  - CARROT
+  - POTATO
+  - BEETROOT
+  - BEETROOT_SEEDS
+  - PUMPKIN
+  - MELON
+  - MELON_SLICE
+  - SWEET_BERRIES
+  - STRING
+  - FEATHER
+  - LEATHER
+  - RABBIT_HIDE
+  - FLINT
+  - CLAY_BALL
+  - STONE
+  - GRANITE
+  - DIORITE
+  - ANDESITE
+  - GLASS_PANE
+  - COAL
+  - CHARCOAL
+  - IRON_INGOT
+  - GOLD_INGOT
+  - RAW_IRON
+  - RAW_GOLD
+  - RAW_COPPER
+  - COD
+  - SALMON
+  - TROPICAL_FISH
+  - PUFFERFISH
+  - WHITE_WOOL
+  - ORANGE_WOOL
+  - MAGENTA_WOOL
+  - LIGHT_BLUE_WOOL
+  - YELLOW_WOOL
+  - LIME_WOOL
+  - PINK_WOOL
+  - GRAY_WOOL
+  - LIGHT_GRAY_WOOL
+  - CYAN_WOOL
+  - PURPLE_WOOL
+  - BLUE_WOOL
+  - BROWN_WOOL
+  - GREEN_WOOL
+  - RED_WOOL
+  - BLACK_WOOL
+
+# Ces livres restent disponibles, mais leur prix minimum en émeraudes est forcé.
+# Avec une émeraude à 1200€, MENDING à 64 émeraudes vaut environ 76 800€.
+expensive-enchanted-books:
+  MENDING: 64
+  FORTUNE: 56
+  SILK_TOUCH: 48
+  EFFICIENCY: 48
+  UNBREAKING: 48
+  LOOTING: 56

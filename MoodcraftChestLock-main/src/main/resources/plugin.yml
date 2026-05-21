@@ -1,0 +1,33 @@
+name: MoodLock
+version: 1.0.2
+main: fr.moodcraft.lock.MoodLock
+api-version: '1.21'
+
+commands:
+  lock:
+    description: Verrouiller un coffre
+  unlock:
+    description: Déverrouiller son coffre
+  adminunlock:
+    description: Déverrouiller un coffre de force
+  locktp:
+    description: Se téléporter aux coffres verrouillés
+  lockadd:
+    description: Ajouter un membre au coffre
+  lockdel:
+    description: Retirer un membre du coffre
+  lockadmin:
+    description: Administration avancée des coffres verrouillés
+    usage: /lockadmin <status|info|list|content|history|tp|transfer|purge|cleanup|save|reload>
+    permission: moodlock.admin
+    permission-message: "§c✖ §fAccès réservé à l'administration des coffres."
+
+permissions:
+  moodlock.vip:
+    default: false
+  moodlock.admin:
+    default: op
+  moodlock.adminunlock:
+    default: op
+  moodlock.locktp:
+    default: op

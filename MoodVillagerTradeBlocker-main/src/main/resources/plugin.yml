@@ -1,0 +1,21 @@
+name: MoodVillagerTradeBlocker
+version: 1.0.0
+main: fr.moodcraft.tradeblocker.MoodVillagerTradeBlocker
+api-version: '1.21'
+author: MoodCraft
+description: Bloque les échanges de villageois dangereux pour l'économie MoodCraft
+
+commands:
+  tradeblockerreload:
+    description: Recharge la configuration MoodVillagerTradeBlocker
+    usage: /tradeblockerreload
+    permission: moodtradeblocker.admin
+    permission-message: "§c✖ §fAccès réservé à l'administration."
+    aliases:
+      - mtbreload
+      - villagertradereload
+
+permissions:
+  moodtradeblocker.admin:
+    description: Administration du filtre des échanges villageois
+    default: op

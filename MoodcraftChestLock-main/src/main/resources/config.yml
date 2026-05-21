@@ -1,0 +1,16 @@
+# Monde où les joueurs peuvent utiliser /lock et /unlock.
+world: world
+
+limits:
+  member: 5
+  vip: 15
+
+sign:
+  # Couleur claire proche d'une pancarte blanche.
+  material: BIRCH_WALL_SIGN
+  glow: true
+
+  line1: "§c✦ SÉCURISÉ ✦"
+  line2: "§f%player%"
+  line3: "§7Coffre #%id%"
+  line4: "§aMood§6Craft"
