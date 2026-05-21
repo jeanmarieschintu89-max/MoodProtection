@@ -3,7 +3,7 @@ version: 1.0
 main: fr.moodcraft.lock.MoodLock
 api-version: '1.21'
 author: MoodCraft
-description: Protections MoodCraft : coffres verrouillés et filtrage des trades villageois
+description: "Protections MoodCraft : coffres verrouillés et filtrage des trades villageois"
 
 commands:
   lock:
