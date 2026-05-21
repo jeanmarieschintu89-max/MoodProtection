@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.moodcraft</groupId>
-    <artifactId>MoodVillagerTradeBlocker</artifactId>
-    <version>1.0.0</version>
+    <artifactId>MoodProtection</artifactId>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>MoodVillagerTradeBlocker</name>
+    <name>MoodProtection</name>
 
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
@@ -33,7 +33,7 @@
     </dependencies>
 
     <build>
-        <finalName>MoodVillagerTradeBlocker</finalName>
+        <finalName>MoodProtection</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

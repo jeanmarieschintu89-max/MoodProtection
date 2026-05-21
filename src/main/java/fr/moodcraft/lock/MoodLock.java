@@ -11,6 +11,8 @@ import fr.moodcraft.lock.listener.LockListener;
 import fr.moodcraft.lock.listener.LockProtectionListener;
 import fr.moodcraft.lock.manager.LockContentManager;
 import fr.moodcraft.lock.manager.LockManager;
+import fr.moodcraft.tradeblocker.TradeFilter;
+import fr.moodcraft.tradeblocker.VillagerTradeListener;
 import org.bukkit.Location;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +23,7 @@ public class MoodLock extends JavaPlugin {
 
     private LockManager lockManager;
     private LockContentManager contentManager;
+    private TradeFilter tradeFilter;
 
     @Override
     public void onEnable() {
@@ -33,6 +36,8 @@ public class MoodLock extends JavaPlugin {
         contentManager = new LockContentManager(this, lockManager);
         contentManager.load();
 
+        tradeFilter = new TradeFilter(this);
+
         registerCommand("lock", new LockCommand(this, lockManager, contentManager));
         registerCommand("unlock", new UnlockCommand(this, lockManager, contentManager));
         registerCommand("adminunlock", new AdminUnlockCommand(this, lockManager));
@@ -40,19 +45,28 @@ public class MoodLock extends JavaPlugin {
         registerCommand("lockadd", new LockAddCommand(this, lockManager));
         registerCommand("lockdel", new LockDelCommand(this, lockManager));
         registerCommand("lockadmin", new LockAdminCommand(lockManager, contentManager));
+        registerCommand("tradeblockerreload", (sender, command, label, args) -> {
+            reloadConfig();
+            tradeFilter.reload();
+            sender.sendMessage("§8----- §6✦ §aMood§6Craft §fProtection ✦ §8-----");
+            sender.sendMessage("§a✔ §fConfiguration protection rechargée.");
+            sender.sendMessage("§8-----------------------------");
+            return true;
+        });
 
         getServer().getPluginManager().registerEvents(new LockListener(lockManager, contentManager), this);
         getServer().getPluginManager().registerEvents(new LockProtectionListener(lockManager), this);
+        getServer().getPluginManager().registerEvents(new VillagerTradeListener(this, tradeFilter), this);
 
         getServer().getScheduler().runTaskLater(this, this::snapshotExistingLocks, 40L);
-        getLogger().info("MoodLock actif.");
+        getLogger().info("MoodProtection actif.");
     }
 
     @Override
     public void onDisable() {
         if (lockManager != null) lockManager.save();
         if (contentManager != null) contentManager.save();
-        getLogger().info("MoodLock désactivé.");
+        getLogger().info("MoodProtection désactivé.");
     }
 
     private void snapshotExistingLocks() {

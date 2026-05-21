@@ -18,13 +18,13 @@ import java.util.Set;
 
 public final class TradeFilter {
 
-    private final MoodVillagerTradeBlocker plugin;
+    private final org.bukkit.plugin.java.JavaPlugin plugin;
     private final Set<Material> blockedResults = new HashSet<>();
     private final Set<Material> blockedEmeraldIngredients = new HashSet<>();
     private final Map<String, Integer> expensiveBooks = new HashMap<>();
     private boolean blockAllEmeraldResults;
 
-    public TradeFilter(MoodVillagerTradeBlocker plugin) {
+    public TradeFilter(org.bukkit.plugin.java.JavaPlugin plugin) {
         this.plugin = plugin;
         reload();
     }

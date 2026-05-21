@@ -16,10 +16,10 @@ import java.util.List;
 
 public final class VillagerTradeListener implements Listener {
 
-    private final MoodVillagerTradeBlocker plugin;
+    private final org.bukkit.plugin.java.JavaPlugin plugin;
     private final TradeFilter filter;
 
-    public VillagerTradeListener(MoodVillagerTradeBlocker plugin, TradeFilter filter) {
+    public VillagerTradeListener(org.bukkit.plugin.java.JavaPlugin plugin, TradeFilter filter) {
         this.plugin = plugin;
         this.filter = filter;
     }

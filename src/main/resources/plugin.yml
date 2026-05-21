@@ -1,7 +1,9 @@
-name: MoodLock
-version: 1.0.2
+name: MoodProtection
+version: 1.0
 main: fr.moodcraft.lock.MoodLock
 api-version: '1.21'
+author: MoodCraft
+description: Protections MoodCraft : coffres verrouillés et filtrage des trades villageois
 
 commands:
   lock:
@@ -21,6 +23,14 @@ commands:
     usage: /lockadmin <status|info|list|content|history|tp|transfer|purge|cleanup|save|reload>
     permission: moodlock.admin
     permission-message: "§c✖ §fAccès réservé à l'administration des coffres."
+  tradeblockerreload:
+    description: Recharge la configuration du filtre des échanges villageois
+    usage: /tradeblockerreload
+    permission: moodtradeblocker.admin
+    permission-message: "§c✖ §fAccès réservé à l'administration."
+    aliases:
+      - mtbreload
+      - villagertradereload
 
 permissions:
   moodlock.vip:
@@ -30,4 +40,7 @@ permissions:
   moodlock.adminunlock:
     default: op
   moodlock.locktp:
+    default: op
+  moodtradeblocker.admin:
+    description: Administration du filtre des échanges villageois
     default: op

@@ -1,18 +1,26 @@
-# MoodVillagerTradeBlocker
-# Objectif: empêcher les échanges villageois qui cassent l'économie.
+# MoodProtection Config
+# Fusion de MoodLock et MoodVillagerTradeBlocker.
+
+# Monde où les joueurs peuvent utiliser /lock et /unlock.
+world: world
+
+limits:
+  member: 5
+  vip: 15
+
+sign:
+  material: BIRCH_WALL_SIGN
+  glow: true
+  line1: "§c✦ SÉCURISÉ ✦"
+  line2: "§f%player%"
+  line3: "§7Coffre #%id%"
+  line4: "§aMood§6Craft"
 
 settings:
   notify-admins: false
   remove-empty-villagers: false
-
-  # Recommandé: true.
-  # Bloque tous les trades où le villageois DONNE des émeraudes.
-  # Les trades où le villageois DEMANDE des émeraudes restent autorisés,
-  # sauf si le résultat est dans blocked-result-items.
   block-all-emerald-results: true
 
-# Supprime les trades dont le résultat donne ces items.
-# Ici on bloque surtout les ressources liées à la bourse et les équipements trop forts.
 blocked-result-items:
   - EMERALD_BLOCK
   - DIAMOND
@@ -44,9 +52,6 @@ blocked-result-items:
   - NETHERITE_SCRAP
   - NETHERITE_UPGRADE_SMITHING_TEMPLATE
 
-# Si block-all-emerald-results est false, cette liste bloque seulement
-# les trades où ces ingrédients donnent une émeraude.
-# Elle reste utile pour une politique moins stricte.
 blocked-emerald-ingredient-items:
   - STICK
   - PAPER
@@ -100,8 +105,6 @@ blocked-emerald-ingredient-items:
   - RED_WOOL
   - BLACK_WOOL
 
-# Ces livres restent disponibles, mais leur prix minimum en émeraudes est forcé.
-# Avec une émeraude à 1200€, MENDING à 64 émeraudes vaut environ 76 800€.
 expensive-enchanted-books:
   MENDING: 64
   FORTUNE: 56
